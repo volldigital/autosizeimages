@@ -1,0 +1,9 @@
+size_configs:
+  -
+    width: 480
+  -
+    width: 640
+  -
+    width: 900
+  -
+    width: 1200

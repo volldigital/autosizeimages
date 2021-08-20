@@ -1,0 +1,53 @@
+{
+    "name": "volldigital/autosizeimages",
+    "version": "1.0.0",
+    "description": "Statamic 3 addon to automagically resize images",
+    "keywords": [
+        "responsive",
+        "resize",
+        "image"
+    ],
+    "homepage": "https://voll.digital",
+    "authors": [
+        {
+            "name": "Enrico Costanzo",
+            "email": "enrico.costanzo@voll.digital"
+        }
+    ],
+    "license": "MIT",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "VOLLdigital\\Autosizeimages\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "VOLLdigital\\Autosizeimages\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "Autosizeimages",
+            "description": "Automagically resize images"
+        },
+        "laravel": {
+            "providers": [
+                "VOLLdigital\\Autosizeimages\\ServiceProvider"
+            ],
+            "aliases": {
+                "Autosizer": "VOLLdigital\\Autosizeimages\\Facades\\Autosizer"
+            }
+        }
+    },
+    "require": {
+        "statamic/cms": "^3.0",
+        "php": "^7.4 || ^8.0",
+        "laravel/framework": "^7.30.3 || ^8.40",
+        "intervention/image": "^2.6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0 || ^9.0",
+        "orchestra/testbench": "^5.0 || ^6.0"
+    }
+}
