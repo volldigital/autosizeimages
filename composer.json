@@ -1,6 +1,6 @@
 {
     "name": "volldigital/autosizeimages",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Statamic 3 addon to automagically resize images",
     "keywords": [
         "responsive",

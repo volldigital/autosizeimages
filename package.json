@@ -1,6 +1,6 @@
 {
     "name": "autosizeimages",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "",
     "scripts": {
         "watch": "node_modules/.bin/webpack --config=node_modules/laravel-mix/setup/webpack.config.js --watch",
