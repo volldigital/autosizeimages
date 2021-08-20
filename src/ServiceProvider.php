@@ -3,13 +3,10 @@
 namespace VOLLdigital\Autosizeimages;
 
 use Illuminate\Support\Facades\Event;
-use Illuminate\Support\Facades\Route;
 use Statamic\Events\AssetUploaded;
 use Statamic\Facades\CP\Nav;
 use Statamic\Providers\AddonServiceProvider;
-use Statamic\Statamic;
 use VOLLdigital\Autosizeimages\Console\RefreshImages;
-use VOLLdigital\Autosizeimages\Controllers\AutosizeimagesController;
 use VOLLdigital\Autosizeimages\Listeners\AutosizeListener;
 
 class ServiceProvider extends AddonServiceProvider
@@ -21,9 +18,7 @@ class ServiceProvider extends AddonServiceProvider
     ];
 
     protected $routes = [
-        'cp' => __DIR__ . '/../routes/cp.php',
-//        'actions' => __DIR__ . '/../routes/actions.php',
-        // 'web' => __DIR__.'/../routes/web.php',
+        'cp' => __DIR__ . '/../routes/cp.php'
     ];
 
     public function boot()
@@ -39,8 +34,6 @@ class ServiceProvider extends AddonServiceProvider
         $this->registerListeners();
 
         $this->registerNavigation();
-
-        $this->registerRoutes();
 
         $this->registerViews();
     }
@@ -91,18 +84,6 @@ class ServiceProvider extends AddonServiceProvider
                     'About' => cp_route('autosizeimages.index'),
                     'Settings' => cp_route('autosizeimages.settings')
                 ]);
-        });
-    }
-
-    private function registerRoutes()
-    {
-        Statamic::booted(function () {
-            $this->registerCpRoutes(function () {
-                Route::name("autosizeimages.")->prefix("autosizeimages")->group(function () {
-                    Route::get('/', [AutosizeimagesController::class, 'index'])->name("index");
-                    Route::get('settings', [AutosizeimagesController::class, 'settings'])->name("settings");;
-                });
-            });
         });
     }
 

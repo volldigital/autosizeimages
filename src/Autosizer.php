@@ -4,9 +4,12 @@ namespace VOLLdigital\Autosizeimages;
 
 use Intervention\Image\ImageManagerStatic as Image;
 use Statamic\Assets\Asset;
+use Statamic\Facades\YAML;
 
 class Autosizer
 {
+    private $config_path;
+
     private array $size_configs;
 
     /**
@@ -16,7 +19,9 @@ class Autosizer
      */
     public function __construct()
     {
-        $this->size_configs = config("statamic.autosizeimages.size_configs", []);
+        $this->config_path = config_path() . '/statamic/autosizeimages.yaml';
+
+        $this->size_configs = YAML::parse(file_get_contents($this->config_path), true)["size_configs"];
     }
 
     public function resizeAsset(Asset $asset)
