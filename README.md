@@ -13,7 +13,7 @@ For evaluation purposes you may install the plugin directly via
 ```composer require volldigital/autosizeimages```
 
 ### Publish the config
-```php artisan vendor:publish --provider="VOLLdigital\Autosizeimages\ServiceProvider" --tag="config"```
+```php artisan vendor:publish --provider="VOLLdigital\Autosizeimages\ServiceProvider"```
 
 You may modify the published config and add as many formats as you need.
 The config is provided in YAML format.
